@@ -15,24 +15,19 @@ class MyCatCollector extends StatelessWidget {
       DeviceOrientation.portraitDown,
     ]);
 
-    return GestureDetector(
-      onTapDown: (position) {
-        print(position.globalPosition);
-      },
-      child: SingleChildScrollView(
-        scrollDirection: Axis.horizontal,
-        child: InteractiveViewer(
-          minScale: 1.0,
-          maxScale: 3.0,
-          child: const Stack(children: [
-            Background(),
-            Position1(),
-            Position2(),
-            Position3(),
-            Position4(),
-            Position5(),
-          ]),
-        ),
+    return SingleChildScrollView(
+      scrollDirection: Axis.horizontal,
+      child: InteractiveViewer(
+        minScale: 1.0,
+        maxScale: 3.0,
+        child: const Stack(children: [
+          Background(),
+          Position1(),
+          Position2(),
+          Position3(),
+          Position4(),
+          Position5(),
+        ]),
       ),
     );
   }
