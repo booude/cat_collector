@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 
-import 'package:cat_collector/components/cat.dart';
+import 'package:cat_collector/components/cats.dart';
 import 'package:cat_collector/constants/position_constants.dart';
 import 'package:cat_collector/data.dart';
 
@@ -22,7 +22,7 @@ class Position1 extends StatelessWidget {
       child: Stack(
         children: [
           matchingCat['id'] != ''
-              ? Cat(
+              ? Cats(
                   id: matchingCat['id'],
                   pose: matchingCat['pose'],
                 )

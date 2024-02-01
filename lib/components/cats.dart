@@ -1,9 +1,9 @@
 import 'package:flutter/material.dart';
 
-class Cat extends StatelessWidget {
+class Cats extends StatelessWidget {
   final int id;
   final int pose;
-  const Cat({super.key, required this.id, required this.pose});
+  const Cats({super.key, required this.id, required this.pose});
 
   @override
   Widget build(BuildContext context) {
