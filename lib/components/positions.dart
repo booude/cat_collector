@@ -2,18 +2,31 @@ import 'package:flutter/material.dart';
 
 import 'package:cat_collector/components/cat.dart';
 import 'package:cat_collector/constants/position_constants.dart';
+import 'package:cat_collector/data.dart';
 
 class Position1 extends StatelessWidget {
   const Position1({Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
+    List<Map<String, dynamic>> cats = CatsData.database;
+
+    Map<String, dynamic>? matchingCat = cats.firstWhere(
+      (cat) => cat['position'] == 1 && cat['show'] == true,
+      orElse: () => {'id': '', 'pose': -1},
+    );
+
     return Positioned(
       top: PositionConstants.pos1.top,
       left: PositionConstants.pos1.left,
-      child: const Stack(
+      child: Stack(
         children: [
-          Cat(),
+          matchingCat['id'] != ''
+              ? Cat(
+                  id: matchingCat['id'],
+                  pose: matchingCat['pose'],
+                )
+              : const SizedBox.shrink(),
         ],
       ),
     );
@@ -30,7 +43,7 @@ class Position2 extends StatelessWidget {
       left: PositionConstants.pos2.left,
       child: const Stack(
         children: [
-          Cat(),
+          //Cat(),
         ],
       ),
     );
@@ -47,7 +60,7 @@ class Position3 extends StatelessWidget {
       left: PositionConstants.pos3.left,
       child: const Stack(
         children: [
-          Cat(),
+          //Cat(),
         ],
       ),
     );
@@ -64,7 +77,7 @@ class Position4 extends StatelessWidget {
       left: PositionConstants.pos4.left,
       child: const Stack(
         children: [
-          Cat(),
+          //Cat(),
         ],
       ),
     );
@@ -81,7 +94,7 @@ class Position5 extends StatelessWidget {
       left: PositionConstants.pos5.left,
       child: const Stack(
         children: [
-          Cat(),
+          //Cat(),
         ],
       ),
     );

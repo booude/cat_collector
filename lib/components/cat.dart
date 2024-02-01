@@ -1,14 +1,14 @@
 import 'package:flutter/material.dart';
 
-import 'package:cat_collector/game/assets.dart';
-
 class Cat extends StatelessWidget {
-  const Cat({super.key});
+  final int id;
+  final int pose;
+  const Cat({super.key, required this.id, required this.pose});
 
   @override
   Widget build(BuildContext context) {
     return Image.asset(
-      Assets.neko5,
+      'assets/images/img_neko_$id$pose.webp',
       scale: 3,
     );
   }
